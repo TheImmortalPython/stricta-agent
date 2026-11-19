@@ -125,7 +125,10 @@ class StrictaAgentRunner:
             result = self._execute_tool(proposal)
             self._record_ledger_entry(node, proposal, result)
             self._advance_phase(node)
-            node.status = NodeStatus.VERIFIED
+            if node.role_phase == RoleProgression.COMPLETE:
+                node.status = NodeStatus.VERIFIED
+            else:
+                node.status = NodeStatus.PENDING
             return {
                 "node_id": node.node_id,
                 "status": node.status.value,

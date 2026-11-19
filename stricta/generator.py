@@ -5,6 +5,13 @@ from typing import Any, Dict, List, Optional
 from .logits import PaninianKarakaLogitsProcessorFactory
 from .schemas import ActionProposal, KarakaRole, KarakaTaskNode
 
+_ALLOWED_TOOL_NAMES = (
+    "verify_invariants",
+    "record_ledger_entry",
+    "emit_audit_manifest",
+    "commit_state_ledger",
+)
+
 
 class HuggingFacePrimaryGenerator:
     def __init__(
@@ -30,6 +37,7 @@ class HuggingFacePrimaryGenerator:
     ) -> str:
         role_labels = [r.value for r in active_roles]
         ledger_len = len(runtime_state.get("ledger", []))
+        allowed_str = ", ".join(_ALLOWED_TOOL_NAMES)
         return (
             f"Stricta Deterministic Action Proposal\n"
             f"Node: {node.node_id} | Phase: {node.role_phase.value} | Retry: {retry_count}\n"
@@ -38,8 +46,17 @@ class HuggingFacePrimaryGenerator:
             f"sampradana={node.sampradana}, apadana={node.apadana}, adhikarana={node.adhikarana}\n"
             f"Active Roles: {role_labels}\n"
             f"Ledger Entries: {ledger_len}\n"
+            f"Allowed tool_name values (choose one exact string): [{allowed_str}]\n"
             f"Return JSON with keys: tool_name, arguments, expected_state_change, confidence_score.\n"
         )
+
+    def _normalize_tool_name(self, raw_tool: Any, node: KarakaTaskNode) -> str:
+        candidate = str(raw_tool).strip() if raw_tool is not None else ""
+        if candidate in _ALLOWED_TOOL_NAMES:
+            return candidate
+        if node.karana in _ALLOWED_TOOL_NAMES:
+            return node.karana
+        return "verify_invariants"
 
     def _extract_json_dict(self, raw_text: str) -> Dict[str, Any]:
         if not raw_text:
@@ -139,7 +156,7 @@ class HuggingFacePrimaryGenerator:
         )
         payload = self._extract_json_dict(raw_text)
 
-        tool_name = str(payload.get("tool_name") or node.karana or "verify_invariants")
+        tool_name = self._normalize_tool_name(payload.get("tool_name"), node)
         raw_args = payload.get("arguments")
         arguments = dict(raw_args) if isinstance(raw_args, dict) else {"target": node.karma}
 
