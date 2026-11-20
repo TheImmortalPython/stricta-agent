@@ -264,6 +264,6 @@ def smoke_test_multi_convergence(
 
 
 if __name__ == "__main__":
-    result = smoke_test_multi_convergence()
+    result = smoke_test_multi_convergence(rollback_target_node="NODE-G")
     print("STRICTA MULTI-CONVERGENCE SMOKE TEST PASSED:")
     print(json.dumps(result, indent=2, ensure_ascii=False))
