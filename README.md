@@ -1,10 +1,10 @@
 <p align="right">
-  <img src="TIP_Logo_Square.jpg" alt="TheImmortalPython Labs Logo" width="30" />
+  <img src="assets/TIP_Logo_Square.jpg" alt="TheImmortalPython Labs Logo" width="30" />
 </p>
 <br>
 
 <p align="center">
-  <img src="Stricta_Banner.jpg" alt="Stricta Banner" width="100%">
+  <img src="assets/Stricta_Banner.jpg" alt="Stricta Banner" width="100%">
 </p>
 <br>
 <br>
@@ -16,7 +16,7 @@
 
 A deterministic, phase-gated agent orchestration engine built on Paninian Karaka task modeling, structural logit masking, shadow verification, single-attempt rollback recovery, and dual-backend ledger persistence (JSONL and SQLite).
 
-
+---
 
 <p><em>Developed by Joshua St. Germain | TheImmortalPython Labs</em></p>
 
@@ -67,8 +67,8 @@ Built on `Stricta`'s core orchestration, masking, and persistence primitives, yo
 │   ├── schemas.py                    # KarakaTaskNode and core state data structures
 │   └── tools.py                      # Tool execution wrappers and ledger parity utilities
 ├── assets/
-│   ├── TIP_Logo_Square.jpg           # TheImmortalPython Labs logo
-│   └── Stricta_Banner.jpg            # Repository banner image
+│   ├── Stricta_Banner.jpg            # Repository banner image
+│   └── TIP_Logo_Square.jpg           # TheImmortalPython Labs logo
 ├── .gitignore                        # Git ignore rules for local ledgers and build artifacts
 ├── CONTRIBUTING.md                   # Solo-maintainer guidelines, no-PR policy, and issue expectations
 ├── LICENSE                           # GNU Affero General Public License v3.0 (AGPL-3.0)
