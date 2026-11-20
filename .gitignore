@@ -1,0 +1,26 @@
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments & local caches
+.venv/
+venv/
+ENV/
+env/
+.cache/
+huggingface/
+
+# Generated Stricta smoke-test ledgers
+*.jsonl
+*.sqlite
+*.sqlite3
+*.db
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
