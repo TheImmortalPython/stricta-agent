@@ -44,7 +44,7 @@ During execution, `StrictaAgentRunner` pairs local Hugging Face model inference 
 
 ### Standard Agent Loops vs. Deterministic Control Planes
 
-| Feature | Standard Conversational Agent | Deterministic Control Plane |
+| Dimension | Standard Conversational Agent | Deterministic Control Plane |
 | :--- | :--- | :--- |
 | **Execution Flow** | Free-form prompt loops | Explicit DAGs & phase gates |
 | **Output Enforcement** | Prompt engineering & retries | Structural logit masking |
