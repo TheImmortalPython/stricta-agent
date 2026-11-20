@@ -12,7 +12,7 @@
 
 <div align="center">
 
-<p><h1>Stricta</h1></p>
+<p><h1>Stricta: Deterministic Agent Orchestration Runtime</h1></p>
 
 A deterministic, phase-gated agent orchestration engine built on Paninian Karaka task modeling, structural logit masking, shadow verification, single-attempt rollback recovery, and dual-backend ledger persistence (JSONL and SQLite).
 
