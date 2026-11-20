@@ -1,6 +1,6 @@
 [project]
 name = "stricta"
-version = "0.3.0"
+version = "0.1.0"
 description = "Deterministic agent control plane with Pāṇinian Kāraka role progression, logit containment, ShadowCritic validation, StepSnapshot rollback, and JSONL/SQLite ledger parity."
 readme = "README.md"
 requires-python = ">=3.10"
