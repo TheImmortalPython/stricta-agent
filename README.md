@@ -42,6 +42,15 @@ Dual-licensed under **AGPLv3** and **Commercial Terms**.
 
 During execution, `StrictaAgentRunner` pairs local Hugging Face model inference (`HuggingFacePrimaryGenerator`) with structural token constraints (`PaninianKarakaLogitsProcessorFactory`), validates proposed transitions through `ShadowCritic`, recovers from single-attempt transient failures via rollback, and records accepted steps across JSONL and SQLite persistence backends.
 
+### Standard Agent Loops vs. Deterministic Control Planes
+
+| Feature | Standard Conversational Agent | Deterministic Control Plane |
+| :--- | :--- | :--- |
+| **Execution Flow** | Free-form prompt loops | Explicit DAGs & phase gates |
+| **Output Enforcement** | Prompt engineering & retries | Structural logit masking |
+| **Error Recovery** | Re-prompting or full restart | Isolated single-step snapshot rollback |
+| **Auditability** | Unstructured chat logs | Replayable, parity-checked state ledgers |
+
 ## What You Can Make With Stricta
 
 Built on `Stricta`'s core orchestration, masking, and persistence primitives, you can build:
