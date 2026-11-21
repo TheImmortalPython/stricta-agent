@@ -51,7 +51,7 @@ During execution, `StrictaAgentRunner` pairs local Hugging Face model inference 
 | **Error Recovery** | Re-prompting or full restart | Isolated single-step snapshot rollback |
 | **Auditability** | Unstructured chat logs | Replayable, parity-checked state ledgers |
 
-## What You Can Make With Stricta
+## Use Cases
 
 Built on `Stricta`'s core orchestration, masking, and persistence primitives, you can build:
 
@@ -62,7 +62,7 @@ Built on `Stricta`'s core orchestration, masking, and persistence primitives, yo
 * **Self-Contained Local or Browser Runtime Harnesses:** Assemble lightweight local or browser-hosted agent loops around `StrictaAgentRunner` and `ShadowCritic` where candidate actions are evaluated against confidence and state-change checks before committing state transitions.
 * **Custom Domain & Role-Driven State Machines:** Model specialized task lifecycles tailored to custom `karta`, `karma`, `karana`, `sampradana`, `apadana`, and `adhikarana` assignments for controlled, repeatable automation.
 
-## Architecture & Repository Layout
+## Repository Layout
 
 ```text
 ├── stricta/
