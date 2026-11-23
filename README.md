@@ -67,6 +67,9 @@ Built on `Stricta`'s core orchestration, masking, and persistence primitives, yo
 ## Repository Layout
 
 ```text
+├── assets/
+│   ├── Stricta_Banner.jpg            # Repository banner image
+│   └── TIP_Logo_Square.jpg           # TheImmortalPython Labs logo
 ├── stricta/
 │   ├── __init__.py                   # Package exports
 │   ├── critic.py                     # ShadowCritic proposal validation & verification checks
@@ -77,13 +80,11 @@ Built on `Stricta`'s core orchestration, masking, and persistence primitives, yo
 │   ├── runner.py                     # StrictaAgentRunner DAG scheduler, gating, and rollback recovery
 │   ├── schemas.py                    # KarakaTaskNode and core state data structures
 │   └── tools.py                      # Tool execution wrappers and ledger parity utilities
-├── assets/
-│   ├── Stricta_Banner.jpg            # Repository banner image
-│   └── TIP_Logo_Square.jpg           # TheImmortalPython Labs logo
 ├── .gitignore                        # Git ignore rules for local ledgers and build artifacts
 ├── CONTRIBUTING.md                   # Solo-maintainer guidelines, no-PR policy, and issue expectations
 ├── LICENSE                           # GNU Affero General Public License v3.0 (AGPL-3.0)
 ├── LICENSE-COMMERCIAL.md             # Self-service commercial IP acquisition license terms
+├── README.md                         # Repository entry point
 ├── pyproject.toml                    # Package metadata and build configuration
 ├── smoke_test_deeper_tree.py         # Verified 8-node deeper-tree & rollback test
 ├── smoke_test_multi_convergence.py   # Verified 8-node multi-convergence & join-rollback test
