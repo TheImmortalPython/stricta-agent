@@ -38,6 +38,8 @@ Dual-licensed under **AGPLv3** and **Commercial Terms**.
 
 ## Overview
 
+Stricta is a deterministic Python orchestration engine for AI agents. Instead of relying on open-ended conversational prompt loops, it forces local LLMs to follow strict dependency graphs, token-level constraints, and verifiable state transitions.
+
 `Stricta` structures multi-step agent execution around explicit dependency graphs and deterministic lifecycle phases (`INIT` → `TARGET` → `BOUNDARY` → `COMPLETE`) rather than unconstrained conversational loops. Each task is modeled as a `KarakaTaskNode` with structured semantic roles (`karta`, `karma`, `karana`, `sampradana`, `apadana`, `adhikarana`) and explicit upstream dependencies.
 
 During execution, `StrictaAgentRunner` pairs local Hugging Face model inference (`HuggingFacePrimaryGenerator`) with structural token constraints (`PaninianKarakaLogitsProcessorFactory`), validates proposed transitions through `ShadowCritic`, recovers from single-attempt transient failures via rollback, and records accepted steps across JSONL and SQLite persistence backends.
