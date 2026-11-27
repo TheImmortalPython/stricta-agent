@@ -136,6 +136,10 @@ This project is 100% solo-authored and maintained by Joshua St. Germain (TheImmo
 
 ---
 
+*Note: All software assets, source code repositories, and commercial licenses are offered strictly on an as-is, non-refundable basis as self-service intellectual property transactions. All sales are final and convey rights to the technology asset and codebase only—without warranties of any kind. Purchases do not include ongoing consulting services, custom engineering, technical support, or managed deployments.*
+
+---
+
 > **Founder & Principal AI Architect:** Joshua St. Germain  
 > **Enterprise Governance & IP Incubator:** TheImmortalPython Labs ([theimmortalpythonlabs@proton.me](mailto:theimmortalpythonlabs@proton.me))  
 > **Repositories:** [`immortal-inference`](https://github.com/TheImmortalPython/immortal-inference) | `stricta-agent` | [`the-nsai-guide`](https://github.com/TheImmortalPython/the-nsai-guide)
